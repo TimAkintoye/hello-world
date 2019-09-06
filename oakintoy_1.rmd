@@ -1,0 +1,8 @@
+O<- read.csv("RidingMowers.csv")
+summary(O)
+boxplot(O$Income)
+hist(O$Lot_Size)
+counts <- table(O$Ownership)
+pie(counts)
+summary(O$Income)
+
