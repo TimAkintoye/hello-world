@@ -1,0 +1,57 @@
+
+***
+This notebook contains the code for assignment 2 Q3.
+
+***
+* Note that lines that start with # are comments. 
+
+```{r,eval=FALSE}
+install.packages("lpSolveAPI")
+library(lpSolveAPI)
+
+```
+***
+Let us set up the Weigelt Corporation problem. Note that we had nine decision variables, and nine constraints.
+In the first formulation, we will directly create the objective function and constraints
+```{r}
+# make an lp object with 0 constraints and 9 decision variables
+lprec <- make.lp(0, 9)
+
+set.objfn(lprec, c(420, 420, 420, 360, 360, 360, 300,300,300))
+
+# change the direction to set maximization for profit
+lp.control(lprec,sense='max')
+
+
+# 3 constrains for Production Capacity of the three plants
+add.constraint(lprec, c(1, 0, 0, 1, 0, 0, 1, 0, 0), "<=", 750)
+add.constraint(lprec, c(0, 1, 0, 0, 1, 0, 0, 1, 0), "<=", 900)
+add.constraint(lprec, c(0, 0, 1, 0, 0, 1, 0, 0, 1), "<=", 450)
+add.constraint(lprec, c(20, 0, 0, 15, 0, 0, 12, 0, 0), "<=", 13000)
+add.constraint(lprec, c(0, 20, 0, 0, 15, 0, 0, 12, 0), "<=", 12000)
+add.constraint(lprec, c(0, 0, 20, 0, 0, 15, 0, 0, 12), "<=", 5000)
+add.constraint(lprec, c(1, 1, 1, 0, 0, 0, 0, 0, 0), "<=", 900)
+add.constraint(lprec, c(0, 0, 0, 1, 1, 1, 0, 0, 0), "<=", 1200)
+add.constraint(lprec, c(0, 0, 0, 0, 0, 0, 1, 1, 1), "<=", 750)
+
+# To identify the variables and constraints, we can
+# set variable names and names of the constraints
+
+ColNames <- c("AP1", "AP2", "AP3", "BP1", "BP2", "BP3", "CP1", "CP2", "CP3")
+RowNames <- c("production capacity P1", "Production Capacity P2", "Production Capacity P3", "in process storage P1", "in process storage P2", "in process storageP3", "A sales forecast", "B sales forecas", "C sales forecas")
+dimnames(lprec) <- list(RowNames, ColNames)
+
+# Now, print out the model
+lprec
+
+# The model can also be saved to a file
+write.lp(lprec, filename = "oakintoy.lp", type = "lp")
+```
+We now solve the above LP problem, and output the objective function and variables
+```{r}
+solve(lprec)
+get.objective(lprec)
+get.variables(lprec)
+get.constraints(lprec)
+
+```
