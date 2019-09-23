@@ -1,0 +1,68 @@
+
+# Created:    September 22, 2019
+# @Student    Timothy Olugbenga Akintoye, (oakintoy@kent.edu)
+# @version:   1.0
+# File:       assignment 3 dual problm
+# Comment:    
+################################################################
+***
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+dir.create("images")
+```
+
+
+* Note that lines that start with # are comments. 
+
+```{r,eval=FALSE}
+install.packages("lpSolveAPI")
+library(lpSolveAPI)
+```
+***
+```{r}
+# make an lp object with 0 constraints and 11 decision variables
+lprec <- make.lp(0, 11)
+
+# Now create the objective function. 
+set.objfn(lprec, c(750, 900, 450, 13000, 12000, 5000, 900, 1200, 750, 0, 0))
+
+# As the default is a minimization problem
+lp.control(lprec,sense='min')
+
+# Add the nine  constraints
+
+add.constraint(lprec, c(1, 0, 0, 20, 0, 0, 1, 0, 0, 900, 450), ">=", 420)
+add.constraint(lprec, c(1, 0, 0, 15, 0, 0, 0, 1, 0, 900, 450), ">=", 360)
+add.constraint(lprec, c(1, 0, 0, 12, 0, 0, 0, 0, 1, 900, 450), ">=", 300)
+add.constraint(lprec, c(0, 1, 0, 0, 20, 0, 1, 0, 0, -750, 0), ">=", 420)
+add.constraint(lprec, c(0, 1, 0, 0, 15, 0, 0, 1, 0, -750, 0), ">=", 360)
+add.constraint(lprec, c(0, 1, 0, 0, 12, 0, 0, 0, 1, -750, 0), ">=", 300)
+add.constraint(lprec, c(0, 0, 1, 0, 0, 20, 1, 0, 0, 0, -750), ">=", 420)
+add.constraint(lprec, c(0, 0, 1, 0, 0, 15, 0, 1, 0, 0, -750), ">=", 360)
+add.constraint(lprec, c(0, 0, 1, 0, 0, 12, 0, 0, 1, 0, -750), ">=", 300)
+
+set.bounds(lprec, lower = c("-inf", "-inf"), columns = c(10, 11)) 
+
+# To identify the variables and constraints, we can
+# set variable names and names of the constraints
+
+ColNames <- c("x1", "x2", "x3", "x4", "x5", "x6", "x7", "x8", "x9", "x10", "x11")
+RowNames <- c("Capacity-P1", "Capacity-P2", "Capacity-P3", "Storage-P1", "Storage-P2", "Storage-P3", "L-Sales", "M-Sales", "S-Sales")
+dimnames(lprec) <- list(RowNames, ColNames)
+
+# Now, print out the model
+lprec
+
+```
+We now solve the above LP problem
+
+```{r}
+solve(lprec)
+get.objective(lprec)
+get.variables(lprec)
+get.constraints(lprec)
+
+```
