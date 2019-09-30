@@ -1,0 +1,41 @@
+# Created:    September 29, 2019
+# @Student    Timothy Olugbenga Akintoye, (oakintoy@kent.edu)
+# @version:   1.0
+# File:       Assignment_4
+# Comment:    
+################################################################
+#***#
+#* Note that lines that start with # are comments.
+#***#
+##########################################################################################################################
+# PURPOSE: of this assignment is to formulate and solve a transportation / transshipment problem.			 #
+# Directions 														 #
+# Heart Start produces automated external defibrillators (AEDs) in each of two different plants (A and B). The unit      # production costs and monthly production capacity of the two plants...The AEDs are sold through three wholesalers.        #
+# The shipping cost from each plant to the warehouse of each wholesaler along with the monthly demand from each          #
+# wholesaler are also indicated in the table. How many AEDs should be produced in each plant, and how should they be     #
+# distributed to each of the three wholesaler warehouses so as to minimize the combined cost of production and shipping? #
+#####################################################################################
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+dir.create("images")
+```
+
+***
+
+
+```{r}
+library(lpSolveAPI)
+x <- read.lp("oakintoy_4 (3).lp")
+x
+```
+
+
+```{r}
+solve(x)
+get.objective(x)
+get.variables(x)
+get.constraints(x)
+get.sensitivity.objex(x)
+get.sensitivity.rhs(x)
+```
+***
