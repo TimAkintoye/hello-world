@@ -1,0 +1,99 @@
+
+                                      ARENA Simulation Results
+                                       ootakintoye@outlook.com
+
+                                  Summary for Replication 1 of 1
+
+Project: Loan Appliction                                             Run execution date : 2/23/2020
+Analyst: Daddy Warbucks                                              Model revision date: 2/23/2020
+
+Replication ended at time      : 160.0 Hours 
+Base Time Units: Hours
+
+                                           TALLY VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Observations
+___________________________________________________________________________________________________
+
+Doris Disburses Funds.VATimePerEntity       1.0915     (Insuf)    .00142     6.6146        117    
+Doris Disburses Funds.TotalTimePerEntity    6.2839     (Insuf)    .04967     16.347        117    
+Chuck Prices Loan.WaitTimePerEntity         3.1066     (Insuf)    .00000     8.3766        122    
+Alfie Checks Credit.WaitTimePerEntity       2.3918     (Insuf)    .00000     8.0901        128    
+Doris Disburses Funds.WaitTimePerEntity     5.1924     (Insuf)    .00000     15.395        117    
+Betty Prepares Covenant.TotalTimePerEntity  2.1374     (Insuf)    .02739     5.8582        128    
+Alfie Checks Credit.VATimePerEntity         1.0241     (Insuf)    .00525     5.7067        128    
+Betty Prepares Covenant.WaitTimePerEntity   1.2582     (Insuf)    .00000     5.6280        128    
+Chuck Prices Loan.TotalTimePerEntity        4.1538     (Insuf)    .00310     8.9986        122    
+Chuck Prices Loan.VATimePerEntity           1.0472     (Insuf)    .00310     4.6789        122    
+Betty Prepares Covenant.VATimePerEntity     .87924     (Insuf)    .01325     3.6841        128    
+Alfie Checks Credit.TotalTimePerEntity      3.4160     (Insuf)    .00525     10.413        128    
+Application.VATime                          4.0989     (Insuf)    .74809     9.7546        117    
+Application.NVATime                         .00000     (Insuf)    .00000     .00000        117    
+Application.WaitTime                        11.984     (Insuf)    .00000     22.273        117    
+Application.TranTime                        .00000     (Insuf)    .00000     .00000        117    
+Application.OtherTime                       .00000     (Insuf)    .00000     .00000        117    
+Application.TotalTime                       16.083     (Insuf)    1.4220     27.208        117    
+Alfie Checks Credit.Queue.WaitingTime       2.3733     (Insuf)    .00000     8.0901        129    
+Betty Prepares Covenant.Queue.WaitingTime   1.2582     (Insuf)    .00000     5.6280        128    
+Doris Disburses Funds.Queue.WaitingTime     5.1739     (Insuf)    .00000     15.395        118    
+Chuck Prices Loan.Queue.WaitingTime         3.1120     (Insuf)    .00000     8.3766        123    
+
+                                     DISCRETE-CHANGE VARIABLES
+
+Identifier                                  Average   Half Width  Minimum    Maximum   Final Value
+___________________________________________________________________________________________________
+
+Application.WIP                             12.393     (Insuf)    .00000     21.000     12.000    
+Doris.NumberBusy                            .80801     (Insuf)    .00000     1.0000     1.0000    
+Doris.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Doris.Utilization                           .80801     (Insuf)    .00000     1.0000     1.0000    
+Chuck.NumberBusy                            .80438     (Insuf)    .00000     1.0000     1.0000    
+Chuck.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Chuck.Utilization                           .80438     (Insuf)    .00000     1.0000     1.0000    
+Betty.NumberBusy                            .70339     (Insuf)    .00000     1.0000     .00000    
+Betty.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Betty.Utilization                           .70339     (Insuf)    .00000     1.0000     .00000    
+Alfie.NumberBusy                            .82330     (Insuf)    .00000     1.0000     1.0000    
+Alfie.NumberScheduled                       1.0000     (Insuf)    1.0000     1.0000     1.0000    
+Alfie.Utilization                           .82330     (Insuf)    .00000     1.0000     1.0000    
+Alfie Checks Credit.Queue.NumberInQueue     1.9135     (Insuf)    .00000     8.0000     .00000    
+Betty Prepares Covenant.Queue.NumberInQueu  1.0065     (Insuf)    .00000     6.0000     .00000    
+Doris Disburses Funds.Queue.NumberInQueue   3.8685     (Insuf)    .00000     13.000     4.0000    
+Chuck Prices Loan.Queue.NumberInQueue       2.4654     (Insuf)    .00000     11.000     5.0000    
+
+                                             OUTPUTS
+
+Identifier                                   Value
+_____________________________________________________________
+
+Alfie Checks Credit Accum VA Time           131.08    
+Alfie Checks Credit Accum Wait Time         306.16    
+Chuck Prices Loan Accum VA Time             127.75    
+Betty Prepares Covenant Accum Wait Time     161.05    
+Doris Disburses Funds Accum VA Time         127.70    
+Doris Disburses Funds Accum Wait Time       607.51    
+Betty Prepares Covenant Accum VA Time       112.54    
+Alfie Checks Credit Number In               129.00    
+Betty Prepares Covenant Number Out          128.00    
+Alfie Checks Credit Number Out              128.00    
+Chuck Prices Loan Number In                 128.00    
+Chuck Prices Loan Number Out                122.00    
+Betty Prepares Covenant Number In           128.00    
+Doris Disburses Funds Number Out            117.00    
+Doris Disburses Funds Number In             122.00    
+Chuck Prices Loan Accum Wait Time           379.01    
+Application.NumberIn                        129.00    
+Application.NumberOut                       117.00    
+Doris.NumberSeized                          118.00    
+Doris.ScheduledUtilization                  .80801    
+Chuck.NumberSeized                          123.00    
+Chuck.ScheduledUtilization                  .80438    
+Betty.NumberSeized                          128.00    
+Betty.ScheduledUtilization                  .70339    
+Alfie.NumberSeized                          129.00    
+Alfie.ScheduledUtilization                  .82330    
+System.NumberOut                            117.00    
+
+
+Simulation run time: 2.77 minutes.
+Simulation run complete.

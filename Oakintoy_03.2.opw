@@ -1,0 +1,24 @@
+[RESOURCES]
+Doris
+Chuck
+Betty
+Alfie
+[VARIABLES]
+Alfie Checks Credit.VATime
+Alfie Checks Credit.WaitTime
+Chuck Prices Loan.VATime
+Betty Prepares Covenant.WaitTime
+Doris Disburses Funds.VATime
+Application Departs.NumberOut
+Doris Disburses Funds.WaitTime
+Application Arrives.NumberOut
+Betty Prepares Covenant.VATime
+Alfie Checks Credit.NumberIn
+Betty Prepares Covenant.NumberOut
+Alfie Checks Credit.NumberOut
+Chuck Prices Loan.NumberIn
+Chuck Prices Loan.NumberOut
+Betty Prepares Covenant.NumberIn
+Doris Disburses Funds.NumberOut
+Doris Disburses Funds.NumberIn
+Chuck Prices Loan.WaitTime
